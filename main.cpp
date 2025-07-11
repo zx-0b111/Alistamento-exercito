@@ -10,7 +10,7 @@ float peso;
 
 void filhoUnico() {
     if (altura >= 1.60 && peso >= 60) {
-        cout << "Recruta:\n";
+        cout << "\nRecruta:\n";
         cout << "Nome: " << nome << endl;
         cout << "Idade: " << idade << endl;
         cout << "Altura: " << altura << endl;
@@ -18,7 +18,7 @@ void filhoUnico() {
         cout << "Voce comeca na segunda feira.";
     }
     else {
-        cout << "Não atende os requisitos";
+        cout << "NÃ£o atende os requisitos";
     }
 }
 
@@ -64,7 +64,7 @@ void caracteristica() {
         }
     }
     else {
-        cout << "Você ainda não tem idade para se alistar no exército";
+        cout << "VocÃª ainda nÃ£o tem idade para se alistar no exÃ©rcito";
     }
 }
 
