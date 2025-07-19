@@ -4,18 +4,24 @@ using namespace std;
 string nome;
 string cor_cabelo;
 string cor_olho;
-int idade;
-float altura;
-float peso;
+int *idade;
+float *altura;
+float *peso;
+
+void inicializador() {
+    idade = new int;
+    altura = new float;
+    peso = new float;
+}
 
 void filhoUnico() {
-    if (altura >= 1.60 && peso >= 60) {
+    if (*altura >= 1.60 && *peso >= 60) {
         cout << "\nRecruta:\n";
         cout << "Nome: " << nome << endl;
-        cout << "Idade: " << idade << endl;
-        cout << "Altura: " << altura << endl;
-        cout << "Peso: " << peso << endl;
-        cout << "Voce comeca na segunda feira.";
+        cout << "Idade: " << *idade << endl;
+        cout << "Altura: " << *altura << endl;
+        cout << "Peso: " << *peso << endl;
+        cout << "\nVoce comeca na segunda feira.";
     }
     else {
         cout << "Não atende os requisitos";
@@ -28,15 +34,15 @@ void caracteristica() {
     cin >> nome;
     cin.clear();
     cout << "Idade: ";
-    cin >> idade;
+    cin >> *idade;
     cin.clear();
   
-    if (idade >= 18) {
+    if (*idade >= 18) {
         cout << "Altura: ";
-        cin >> altura;
+        cin >> *altura;
         cin.clear();
         cout << "Peso: ";
-        cin >> peso;
+        cin >> *peso;
         cin.clear();
         cout << "Cor do cabelo: ";
         cin >> cor_cabelo;
@@ -55,11 +61,11 @@ void caracteristica() {
 
         switch (opcoes) {
         case 0:
-            filhoUnico();
+            cout << "\nDispensado. Volte semana que vem para jurar a bandeira.";
             break;
         
         case 1:
-            cout << "\nDispensado. Volte semana que vem para jurar a bandeira.";
+            filhoUnico();
             break;
         }
     }
@@ -70,7 +76,11 @@ void caracteristica() {
 
 int main()
 {
+    inicializador();
     caracteristica();
+    delete idade;
+    delete altura;
+    delete peso;
 
     return 0;
 }
